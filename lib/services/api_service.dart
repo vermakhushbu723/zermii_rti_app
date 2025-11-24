@@ -5,7 +5,7 @@ class ApiService {
   // Production API URL (Render deployment)
   static const String baseUrl = 'https://zermii-rti-backend-cbiz.onrender.com/api';
 
-  // For Android Emulator, use 10.0.2.2 instead of localhost
+  // For Android use 10.0.2.2 instead of localhost
   // For iOS Simulator, use localhost
   // For physical device, use your computer's IP address (e.g., http://192.168.1.100:6000/api)
   // static const String baseUrl = 'http://10.0.2.2:6000/api';
