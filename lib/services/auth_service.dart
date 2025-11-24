@@ -15,20 +15,22 @@ class AuthService {
     String? address,
   }) async {
     try {
+      final requestData = {
+        'name': name,
+        'email': email,
+        'phone': phone,
+        'password': password,
+        'userType': userType,
+        if (address != null && address.isNotEmpty) 'address': address,
+      };
+
       print(
-        '📤 SENDING REGISTRATION DATA: name=$name, email=$email, phone=$phone, userType=$userType',
+        '📤 SENDING REGISTRATION DATA: name=$name, email=$email, phone=$phone, userType=$userType, hasPassword=${password.isNotEmpty}, passwordLength=${password.length}',
       );
 
       final response = await _apiService.post(
         '/auth/register',
-        data: {
-          'name': name,
-          'email': email,
-          'phone': phone,
-          'password': password,
-          'userType': userType,
-          'address': address,
-        },
+        data: requestData,
       );
 
       print('📥 REGISTRATION RESPONSE: ${response.statusCode}');

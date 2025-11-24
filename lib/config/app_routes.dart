@@ -30,6 +30,7 @@ class AppRoutes {
   static const String makePlan = '/customer/make-plan';
   static const String make3DPlan = '/customer/make-3d-plan';
   static const String nearestDealer = '/customer/nearest-dealer';
+  static const String nearbyDealer = '/customer/nearby-dealer';
   static const String dealerDetails = '/customer/dealer-details';
   static const String slotBooking = '/customer/slot-booking';
   static const String siteVisitBooking = '/customer/site-visit';
@@ -40,6 +41,27 @@ class AppRoutes {
   static const String materialProgress = '/customer/material-progress';
   static const String furnitureProgress = '/customer/furniture-progress';
   static const String customerDownloads = '/customer/downloads';
+  static const String customerWallet = '/customer/wallet';
+  static const String customerProfile = '/customer/profile';
+  static const String customerAccount = '/customer/account';
+  static const String customerMyProfile = '/customer/my-profile';
+  static const String customerOrders = '/customer/orders';
+  static const String customerOrderTracking = '/customer/order-tracking';
+  static const String customerOrderDetails = '/customer/order-details';
+  static const String cartScreen = '/customer/cart';
+  static const String cartCheckout = '/customer/cart-checkout';
+  static const String paymentMethod = '/customer/payment-method';
+  static const String customerNotifications = '/customer/notifications';
+  static const String customerSavedAddress = '/customer/saved-address';
+  static const String customerSavedCards = '/customer/saved-cards';
+  static const String customerSettings = '/customer/settings';
+  static const String customerHelp = '/customer/help';
+  static const String customerChangePassword = '/customer/change-password';
+  static const String customerPreferences = '/customer/preferences';
+  static const String customerChangeAvatar = '/customer/change-avatar';
+  static const String customerBusinessAccount = '/customer/business-account';
+  static const String customerSignInDifferentEmail =
+      '/customer/sign-in-different-email';
 
   // Agent Routes
   static const String agentDashboard = '/agent/dashboard';
@@ -74,6 +96,8 @@ class AppRoutes {
   static const String designerChat = '/designer/chat';
   static const String designerWorkUpload = '/designer/work-upload';
   static const String designerProfile = '/designer/profile';
+  static const String designerPayout = '/designer/payout';
+  static const String designerSettings = '/designer/settings';
 
   // Vendor Routes
   static const String vendorDashboard = '/vendor/dashboard';

@@ -20,9 +20,32 @@ import '../screens/auth/otp_verification_screen.dart';
 
 // Customer Screens
 import '../screens/customer/customer_dashboard.dart';
+import '../screens/customer/customer_profile_screen.dart';
+import '../screens/customer/customer_account_screen.dart';
+import '../screens/customer/customer_orders_screen.dart';
+import '../screens/customer/customer_notifications_screen.dart';
+import '../screens/customer/customer_saved_address_screen.dart';
+import '../screens/customer/customer_saved_cards_screen.dart';
+import '../screens/customer/customer_settings_screen.dart';
+import '../screens/customer/customer_help_screen.dart';
+import '../screens/customer/customer_change_password_screen.dart';
+import '../screens/customer/customer_preferences_screen.dart';
+import '../screens/customer/customer_change_avatar_screen.dart';
+import '../screens/customer/customer_business_account_screen.dart';
+import '../screens/customer/customer_sign_in_different_email_screen.dart';
+import '../screens/customer/customer_downloads_screen.dart';
+import '../screens/customer/customer_wallet_dashboard.dart';
+import '../screens/customer/nearby_dealer_screen.dart';
 import '../screens/customer/online_design/online_design_home.dart';
 import '../screens/customer/online_design/designer_list.dart';
 import '../screens/customer/online_design/designer_details.dart';
+
+// Customer Cart & Orders
+import '../screens/customer/cart/cart_screen.dart';
+import '../screens/customer/cart/cart_checkout_screen.dart';
+import '../screens/customer/cart/payment_method_screen.dart';
+import '../screens/customer/cart/order_tracking_screen.dart';
+import '../screens/customer/cart/order_details_screen.dart';
 
 // Agent Screens
 import '../screens/agent/agent_dashboard.dart';
@@ -51,6 +74,14 @@ import '../screens/agent/orders/agent_orders.dart';
 
 // Designer Screens
 import '../screens/designer/designer_dashboard.dart';
+import '../screens/designer/designer_messages_screen.dart';
+import '../screens/designer/designer_requests_screen.dart';
+import '../screens/designer/designer_screen_share_screen.dart';
+import '../screens/designer/designer_chat_screen.dart';
+import '../screens/designer/designer_work_upload_screen.dart';
+import '../screens/designer/designer_profile_screen.dart';
+import '../screens/designer/designer_payout_screen.dart';
+import '../screens/designer/designer_settings_screen.dart';
 
 // Vendor Screens
 import '../screens/vendor/vendor_dashboard.dart';
@@ -150,6 +181,94 @@ class RouteGenerator {
       case AppRoutes.designerDetails:
         return MaterialPageRoute(builder: (_) => const DesignerDetails());
 
+      case AppRoutes.customerProfile:
+        return MaterialPageRoute(builder: (_) => const CustomerAccountScreen());
+
+      case AppRoutes.customerAccount:
+        return MaterialPageRoute(builder: (_) => const CustomerAccountScreen());
+
+      case AppRoutes.customerMyProfile:
+        return MaterialPageRoute(builder: (_) => const CustomerProfileScreen());
+
+      case AppRoutes.customerOrders:
+        return MaterialPageRoute(builder: (_) => const CustomerOrdersScreen());
+
+      case AppRoutes.customerOrderTracking:
+        return MaterialPageRoute(builder: (_) => const OrderTrackingScreen());
+
+      case AppRoutes.customerOrderDetails:
+        return MaterialPageRoute(builder: (_) => const OrderDetailsScreen());
+
+      case AppRoutes.cartScreen:
+        return MaterialPageRoute(builder: (_) => const CartScreen());
+
+      case AppRoutes.cartCheckout:
+        return MaterialPageRoute(builder: (_) => const CartCheckoutScreen());
+
+      case AppRoutes.paymentMethod:
+        return MaterialPageRoute(builder: (_) => const PaymentMethodScreen());
+
+      case AppRoutes.customerNotifications:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerNotificationsScreen(),
+        );
+
+      case AppRoutes.customerSavedAddress:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerSavedAddressScreen(),
+        );
+
+      case AppRoutes.customerSavedCards:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerSavedCardsScreen(),
+        );
+
+      case AppRoutes.customerSettings:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerSettingsScreen(),
+        );
+
+      case AppRoutes.customerHelp:
+        return MaterialPageRoute(builder: (_) => const CustomerHelpScreen());
+
+      case AppRoutes.customerChangePassword:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerChangePasswordScreen(),
+        );
+
+      case AppRoutes.customerPreferences:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerPreferencesScreen(),
+        );
+
+      case AppRoutes.customerChangeAvatar:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerChangeAvatarScreen(),
+        );
+
+      case AppRoutes.customerBusinessAccount:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerBusinessAccountScreen(),
+        );
+
+      case AppRoutes.customerSignInDifferentEmail:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerSignInDifferentEmailScreen(),
+        );
+
+      case AppRoutes.customerDownloads:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerDownloadsScreen(),
+        );
+
+      case AppRoutes.customerWallet:
+        return MaterialPageRoute(
+          builder: (_) => const CustomerWalletDashboard(),
+        );
+
+      case AppRoutes.nearbyDealer:
+        return MaterialPageRoute(builder: (_) => const NearbyDealerScreen());
+
       // Agent Routes
       case AppRoutes.agentDashboard:
         return MaterialPageRoute(builder: (_) => const AgentDashboard());
@@ -238,6 +357,54 @@ class RouteGenerator {
       // Designer Routes
       case AppRoutes.designerDashboard:
         return MaterialPageRoute(builder: (_) => const DesignerDashboard());
+
+      case AppRoutes.designerMessages:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerMessagesScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerRequests:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerRequestsScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerScreenShare:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerScreenShareScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerChat:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerChatScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerWorkUpload:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerWorkUploadScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerProfile:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerProfileScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerPayout:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerPayoutScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.designerSettings:
+        return MaterialPageRoute(
+          builder: (_) => const DesignerSettingsScreen(),
+          settings: settings,
+        );
 
       // Vendor Routes
       case AppRoutes.vendorDashboard:

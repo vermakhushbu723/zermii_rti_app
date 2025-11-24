@@ -2,9 +2,13 @@ import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  // Use 10.0.2.2 for Android Emulator (maps to host machine's localhost)
-  // Use localhost for iOS Simulator and web
-  static const String baseUrl = 'http://10.0.2.2:6000/api';
+  // Production API URL (Render deployment)
+  static const String baseUrl = 'https://zermii-rti-backend-cbiz.onrender.com/api';
+
+  // For Android Emulator, use 10.0.2.2 instead of localhost
+  // For iOS Simulator, use localhost
+  // For physical device, use your computer's IP address (e.g., http://192.168.1.100:6000/api)
+  // static const String baseUrl = 'http://10.0.2.2:6000/api';
   late Dio _dio;
 
   ApiService() {
@@ -46,6 +50,9 @@ class ApiService {
             '🔴 ERROR[${error.response?.statusCode}] => PATH: ${error.requestOptions.path}',
           );
           print('🔴 ERROR MESSAGE: ${error.message}');
+          if (error.response?.data != null) {
+            print('🔴 ERROR DATA: ${error.response?.data}');
+          }
           return handler.next(error);
         },
       ),
@@ -196,8 +203,17 @@ class ApiService {
       return 'Server error occurred';
     }
 
+    print('📋 ERROR RESPONSE DATA: ${response.data}');
+
     switch (response.statusCode) {
       case 400:
+        // Show validation errors if available
+        if (response.data is Map && response.data['errors'] != null) {
+          final errors = response.data['errors'] as List;
+          if (errors.isNotEmpty) {
+            return errors.map((e) => e['msg']).join(', ');
+          }
+        }
         return response.data['message'] ?? 'Bad request';
       case 401:
         return response.data['message'] ?? 'Unauthorized. Please login again.';
